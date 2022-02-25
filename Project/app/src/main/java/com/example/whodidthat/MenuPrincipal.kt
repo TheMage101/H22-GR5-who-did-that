@@ -16,7 +16,7 @@ class MenuPrincipal : AppCompatActivity() {
 
         binding.button2.setOnClickListener {
 
-            startActivity(Intent(this, MenuCreationPersonne::class.java))
+            startActivity(Intent(this, MenuNotes::class.java))
 
         }
     }
