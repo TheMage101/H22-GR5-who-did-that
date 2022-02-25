@@ -1,5 +1,6 @@
 package com.example.whodidthat
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -25,21 +26,24 @@ class MenuCreationPersonne : AppCompatActivity() {
         val ageTextNumber = findViewById<EditText>(R.id.ageTextNumber)
         val buttonCreate = findViewById<Button>(R.id.createButton)
 
-        profilePicture.setOnClickListener{
+        profilePicture.setOnClickListener {
             //créer l'importation de photo
         }
 
         //cela verifie si les fields otn été rempli par l'utilisateurs et si oui et que le bouton
         //créer a été clicker alors une Personne est créer
         buttonCreate.setOnClickListener {
-            if(nameTextField.text.isNotBlank() && ageTextNumber.text.isNotEmpty()){
+            //si tous les field ont été entré la personne est crée et on est déplacé au Main Menu
+            if (nameTextField.text.isNotBlank() && ageTextNumber.text.isNotEmpty()) {
                 val peep = Personne(nameTextField.text.toString(), ageTextNumber.text.toString())
-                peep.savePerson()
-            }
-            else{
-                    if(nameTextField.text.isBlank()){
-                        nameTextField.setHintTextColor(resources.getColor(R.color.))
-                }
+                peep.savePerson(peep)
+                startActivity(Intent(this, MenuCreationPersonne::class.java))
+            } else {
+                //si un des text field est vide son hint va mis en rouge
+                if (nameTextField.text.isBlank())
+                    nameTextField.setHintTextColor(resources.getColor(R.color.red))
+                if (ageTextNumber.text.isBlank())
+                    ageTextNumber.setHintTextColor(resources.getColor(R.color.red))
             }
         }
     }
