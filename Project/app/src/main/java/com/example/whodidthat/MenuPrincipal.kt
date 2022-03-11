@@ -19,5 +19,15 @@ class MenuPrincipal : AppCompatActivity() {
             startActivity(Intent(this, MenuNotes::class.java))
 
         }
+
+        binding.addUser.setOnClickListener {
+
+            val user = Personne("BPB", "1100")
+            user.description = "a"
+            user.gender = "awda"
+            user.notes = ""
+            Personne.savePerson(user)
+
+        }
     }
 }

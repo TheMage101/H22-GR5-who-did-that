@@ -36,7 +36,7 @@ class MenuCreationPersonne : AppCompatActivity() {
             //si tous les field ont été entré la personne est crée et on est déplacé au Main Menu
             if (nameTextField.text.isNotBlank() && ageTextNumber.text.isNotEmpty()) {
                 val peep = Personne(nameTextField.text.toString(), ageTextNumber.text.toString())
-                peep.savePerson(peep)
+                Personne.savePerson(peep)
                 startActivity(Intent(this, MenuPrincipal::class.java))
             } else {
                 //si un des text field est vide son hint va mis en rouge
