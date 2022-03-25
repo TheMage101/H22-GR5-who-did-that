@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Who did that</string>
+    <string name="icon1_name">Messages</string>
+    <string name="icon2_name">Notes</string>
+    <string name="icon3_name">Calendar</string>
+    <string name="icon4_name">Settings</string>
+    <string name="icon5_name">Voting</string>
+    <string name="icon6_name">Help</string>
+    <string name="iconExit_name">Exit</string>
+
+
 </resources>
