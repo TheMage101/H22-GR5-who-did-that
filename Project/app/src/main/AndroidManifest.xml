@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhoDidThat">
         <activity
+            android:name=".MenuNotes"
+            android:exported="false" />
+        <activity
             android:name=".MenuCommunication"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
             android:name=".MenuCreationPersonne"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MenuPrincipal"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

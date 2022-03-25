@@ -8,5 +8,9 @@
     <string name="icon6_name">Help</string>
     <string name="iconExit_name">Exit</string>
 
+    <!--NOTES-->
+    <string name="notes_title">  Notes</string>
+    <string name="notes_text_hint">Écriver vos notes ici…</string>
+
 
 </resources>
