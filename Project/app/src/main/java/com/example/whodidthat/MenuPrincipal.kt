@@ -3,31 +3,45 @@ package com.example.whodidthat
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import com.example.whodidthat.databinding.ActivityMainBinding
 
 class MenuPrincipal : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        binding.button2.setOnClickListener {
+        val peep = Personne("a", "a")
+        Personne.savePerson(peep)
 
-            startActivity(Intent(this, MenuNotes::class.java))
-
+        //le bouton change l'activité à MenuCommunication
+        val communicationButton = findViewById<Button>(R.id.button1)
+        communicationButton.setOnClickListener {
+            val intent = Intent(this@MenuPrincipal, MenuCommunication::class.java)
+            startActivity(intent)
         }
 
-        binding.addUser.setOnClickListener {
-
-            val user = Personne("BPB", "1100")
-            user.description = "a"
-            user.gender = "awda"
-            user.notes = ""
-            Personne.savePerson(user)
-
+        //le bouton change l'activité à MenuNotes
+        val notesButton = findViewById<Button>(R.id.button2)
+        notesButton.setOnClickListener {
+            val intent = Intent(this@MenuPrincipal, MenuNotes::class.java)
+            startActivity(intent)
         }
+
+        //le bouton change l'activité à MenuCalendrier
+        val calendrierButton = findViewById<Button>(R.id.button3)
+        calendrierButton.setOnClickListener {
+            val intent = Intent(this@MenuPrincipal, MenuCalendrier::class.java)
+            startActivity(intent)
+        }
+
+        //le bouton change l'activité à MenuReglages
+        val reglagesButton = findViewById<Button>(R.id.button4)
+        notesButton.setOnClickListener {
+            val intent = Intent(this@MenuPrincipal, MenuReglages::class.java)
+            startActivity(intent)
+        }
+
     }
 }

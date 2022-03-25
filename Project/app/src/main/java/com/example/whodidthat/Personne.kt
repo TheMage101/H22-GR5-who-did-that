@@ -8,7 +8,7 @@ class Personne(var name: String, var age: String) {
 
     lateinit var gender: String
     lateinit var description: String
-    lateinit var notes: String
+    var notes: String = ""
 
     /**
      * Utiliser pour sauvegarder un nouvelle utilisateur
