@@ -21,25 +21,17 @@ class Personne(var name: String, var age: String) {
             peoples.add(peep)
         }
 
-        fun loadPerson() {
-            //TODO
-            //get a user of our choice
-        }
-
-
-        fun saveNotes(notes: String) {
-            getCurrentUser().notes = notes
-        }
-
 
         fun getCurrentUser(): Personne {
             return peoples[currentUser]
         }
 
+        fun saveNotes(notes: String) {
+            getCurrentUser().notes = notes
+        }
     }
     //TODO
     //get the various values we want to get from the wanted user
     //-events
-    //-notes
     //-etc...
 }

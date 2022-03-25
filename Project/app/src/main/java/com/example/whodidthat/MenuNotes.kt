@@ -2,6 +2,7 @@ package com.example.whodidthat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.widget.EditText
 
 class MenuNotes : AppCompatActivity() {
@@ -16,7 +17,10 @@ class MenuNotes : AppCompatActivity() {
         if (personne.notes.isNotEmpty()) {
             notesText.setText(personne.notes)
         }
+
     }
+
+
 
     override fun onBackPressed() {
         Personne.saveNotes(findViewById<EditText>(R.id.notesText).text.toString())
