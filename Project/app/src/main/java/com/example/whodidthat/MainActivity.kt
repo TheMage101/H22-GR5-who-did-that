@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val peep = Personne("a", "a")
+        peep.notes = "asdawdasdwasdwasdwasdwas"
         Personne.savePerson(peep)
 
         //le bouton change l'activité à MenuCommunication
@@ -23,22 +24,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         //le bouton change l'activité à MenuNotes
-        val notesButton = findViewById<Button>(R.id.button2)
+        val notesButton = findViewById<Button>(R.id.button3)
         notesButton.setOnClickListener {
             val intent = Intent(this@MainActivity, MenuNotes::class.java)
             startActivity(intent)
         }
 
         //le bouton change l'activité à MenuCalendrier
-        val calendrierButton = findViewById<Button>(R.id.button3)
+        val calendrierButton = findViewById<Button>(R.id.button5)
         calendrierButton.setOnClickListener {
             val intent = Intent(this@MainActivity, MenuCalendrier::class.java)
             startActivity(intent)
         }
 
         //le bouton change l'activité à MenuReglages
-        val reglagesButton = findViewById<Button>(R.id.button4)
-        notesButton.setOnClickListener {
+        val reglagesButton = findViewById<Button>(R.id.button6)
+        reglagesButton.setOnClickListener {
             val intent = Intent(this@MainActivity, MenuReglages::class.java)
             startActivity(intent)
         }

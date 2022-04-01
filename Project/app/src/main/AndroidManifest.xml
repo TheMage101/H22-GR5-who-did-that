@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhoDidThat">
         <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.WhoDidThat.NoActionBar" />
-        <activity
             android:name=".MenuCommunication"
             android:exported="false" />
         <activity
@@ -29,6 +24,9 @@
         <activity
             android:name=".MenuCreationPersonne"
             android:exported="false" />
+        <activity
+            android:name=".MenuNotes"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
