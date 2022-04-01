@@ -7,7 +7,7 @@
     android:background="#FFFFFF"
     android:backgroundTint="#BAF0FF"
     android:textAlignment="textEnd"
-    tools:context=".MenuPrincipal">
+    tools:context=".MainActivity">
 
     <!--boutons différents menus
    TEMPORAIRE-->
