@@ -1,4 +1,32 @@
 package com.example.whodidthat
 
-class Personne {
+val peoples = ArrayList<Personne>()
+var currentUser: Int = 0
+
+class Personne(var name: String, var age: String) {
+
+    lateinit var gender: String
+    lateinit var description: String
+    var notes: String = ""
+
+    /**
+     * Utiliser pour sauvegarder un nouvelle utilisateur
+     * @param peep est la personne a ajoutÃ©
+     */
+
+    companion object {
+
+        fun savePerson(peep: Personne) {
+            peoples.add(peep)
+        }
+
+
+        fun getCurrentUser(): Personne {
+            return peoples[currentUser]
+        }
+
+        fun saveNotes(notes: String) {
+            getCurrentUser().notes = notes
+        }
+    }
 }
