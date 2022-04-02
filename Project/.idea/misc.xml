@@ -12,14 +12,16 @@
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/drawable/side_nav_bar.xml" value="0.331" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/drawable/voting button_background.xml" value="0.331" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/drawable/voting_icon_background.xml" value="0.331" />
+        <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_first_person_pov_message.xml" value="0.22" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_main2.xml" value="0.16185410334346503" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_menu_calendrier.xml" value="0.3625" />
-        <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_menu_communication.xml" value="0.27899686520376177" />
+        <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_menu_communication.xml" value="0.22" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_menu_creation_personne.xml" value="0.248039914468995" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_menu_notes.xml" value="0.13134057971014493" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_menu_profil.xml" value="0.3625" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_menu_reglages.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/activity_other_person_message.xml" value="0.25" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/layout/content_main.xml" value="0.16869300911854104" />
         <entry key="..\:/Users/evanm/Documents/GitHub/H22-GR5-who-did-that/Project/app/src/main/res/mipmap-anydpi-v26/exit button_round.xml" value="0.173" />
       </map>

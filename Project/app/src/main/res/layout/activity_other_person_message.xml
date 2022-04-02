@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--autre personne: la personne à qui on parle dans une messagerie texte-->
+
+    <!--la bulle de message grise de l'autre personne -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_message_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="#BABABA"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--le contenu du message envoyé par l'autre personne-->
+            <TextView
+                android:id="@+id/text_message_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxWidth="260dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="8dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="8dp"
+                android:text="Content of text message here"
+                android:textColor="#3C3C3C"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--Information: le jour de l'envoi du message de l'autre personne-->
+    <TextView
+        android:id="@+id/text_message_date_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="date sent"
+        android:textColor="#818181"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_profile_other"
+        app:layout_constraintEnd_toEndOf="@+id/cardView_message_other"
+        app:layout_constraintStart_toStartOf="@+id/cardView_message_other" />
+
+    <!--Information: l'heure d'envoi du message de l'autre personne-->
+    <TextView
+        android:id="@+id/text_message_hour_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="time sent"
+        android:textColor="#818181"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView_message_other"
+        app:layout_constraintStart_toEndOf="@+id/cardView_message_other" />
+
+    <!--photo de profil de l'autre personne
+    possiblement, on pourrait pouvoir l'appuyer pour montrer le profil de l'autre?-->
+    <ImageView
+        android:id="@+id/imageView_profile_other"
+        android:layout_width="65dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView_message_other"
+        app:layout_constraintStart_toStartOf="@+id/cardView_message_other"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <!--nom de l'autre personne-->
+    <TextView
+        android:id="@+id/text_name_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="TextView"
+        android:textColor="#818181"
+        app:layout_constraintBottom_toTopOf="@+id/cardView_message_other"
+        app:layout_constraintStart_toEndOf="@+id/imageView_profile_other" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#BAF0FF"
+    android:background="#F3FBFF"
+    android:backgroundTint="#F3FBFF"
     tools:context=".MenuCreationPersonne">
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/button_add_pfp"
         android:layout_width="135dp"
         android:layout_height="135dp"
         android:layout_marginStart="24dp"
@@ -23,71 +24,69 @@
         android:layout_width="232dp"
         android:layout_height="45dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toTopOf="@+id/button7" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/button_add_pfp"
+        app:layout_constraintTop_toTopOf="@+id/button_add_pfp" />
 
     <EditText
         android:id="@+id/editTextPersonAge"
         android:layout_width="232dp"
         android:layout_height="45dp"
         android:ems="10"
+        android:hint="Age"
         android:inputType="textPersonName"
-        android:text="Age"
-        app:layout_constraintStart_toEndOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        app:layout_constraintStart_toEndOf="@+id/button_add_pfp"
         app:layout_constraintTop_toBottomOf="@+id/editTextPersonName" />
 
     <EditText
         android:id="@+id/editTextPersonPronounsa"
         android:layout_width="232dp"
-        android:layout_height="46dp"
+        android:layout_height="45dp"
         android:ems="10"
+        android:hint="Pronouns"
         android:inputType="textPersonName"
-        android:text="Pronouns"
-        app:layout_constraintStart_toEndOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        app:layout_constraintStart_toEndOf="@+id/button_add_pfp"
         app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="391dp"
-        android:layout_height="357dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-        app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-
-
-    </ScrollView>
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
-        android:layout_width="364dp"
-        android:layout_height="47dp"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="3dp"
         android:ems="10"
+        android:hint="Occupation"
         android:inputType="textPersonName"
-        android:text="Title"
-        app:layout_constraintStart_toStartOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        app:layout_constraintStart_toStartOf="@+id/button_add_pfp"
+        app:layout_constraintTop_toBottomOf="@+id/button_add_pfp" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="374dp"
-        android:layout_height="364dp"
-        android:layout_marginTop="3dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Additional information"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="376dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_add_pfp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Additionnal information"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
