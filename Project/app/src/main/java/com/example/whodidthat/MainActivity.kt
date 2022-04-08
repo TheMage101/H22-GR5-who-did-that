@@ -43,5 +43,19 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, MenuReglages::class.java)
             startActivity(intent)
         }
+
+        //le bouton change l'activité à MenuVote
+        val voteButton = findViewById<Button>(R.id.button5)
+        voteButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, MenuVote::class.java)
+            startActivity(intent)
+        }
+
+        //le bouton change l'activité à MenuContactUs
+        val contactUsButton = findViewById<Button>(R.id.button6)
+        contactUsButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, MenuContactUs::class.java)
+            startActivity(intent)
+        }
     }
 }

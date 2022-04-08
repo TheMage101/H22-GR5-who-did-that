@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhoDidThat">
         <activity
+            android:name=".MenuVote"
+            android:exported="false" />
+        <activity
+            android:name=".MenuContactUs"
+            android:exported="false" />
+        <activity
+            android:name=".activity_menu_reglages"
+            android:exported="false"
+            android:label="@string/title_activity_menu_reglages" />
+        <activity
             android:name=".MenuCommunication"
             android:exported="false" />
         <activity
@@ -26,7 +36,7 @@
             android:exported="false" />
         <activity
             android:name=".MenuNotes"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
