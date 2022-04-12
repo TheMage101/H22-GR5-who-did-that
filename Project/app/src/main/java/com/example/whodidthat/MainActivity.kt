@@ -12,9 +12,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //testing section
+        //START
         val peep = Personne("a", "a")
         peep.notes = "asdawdasdwasdwasdwasdwas"
         Personne.savePerson(peep)
+        val e = Personne("e", "e")
+        Personne.savePerson(e)
+        //END
+
+        print("awawdawawdwaaad")
+        print(Personne.getCurrentUser().name)
 
         //le bouton change l'activité à MenuCommunication
         val communicationButton = findViewById<Button>(R.id.button1)
