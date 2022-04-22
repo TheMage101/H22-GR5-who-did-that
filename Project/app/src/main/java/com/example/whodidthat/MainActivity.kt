@@ -1,10 +1,9 @@
 package com.example.whodidthat
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,8 +55,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val switchButton = findViewById<Button>(R.id.switchButton)
-        switchButton.setOnClickListener {
+        val switchingButton = findViewById<Button>(R.id.switchButton)
+        switchingButton.setOnClickListener {
 
             val intent = Intent(this@MainActivity, MenuChoose::class.java)
             startActivity(intent)

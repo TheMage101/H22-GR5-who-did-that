@@ -31,6 +31,9 @@
             android:name=".MenuCreationPersonne"
             android:exported="false" />
         <activity
+            android:name=".MenuChoose"
+            android:exported="false" />
+        <activity
             android:name=".MenuNotes"
             android:exported="false" />
         <activity
