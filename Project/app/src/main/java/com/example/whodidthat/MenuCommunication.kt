@@ -1,11 +1,9 @@
 package com.example.whodidthat
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.random.Random
@@ -18,12 +16,10 @@ class MenuCommunication : AppCompatActivity() {
         val sendButton = findViewById<Button>(R.id.button_send)
         val textBox = findViewById<EditText>(R.id.editTextInput)
 
-        val tmpList = uMessages.get(
-            Pair(
-                Personne.getCurrentUser().name,
-                Personne.getUser(1).name
-            )
-        )
+        val tmpList = uMessages[Pair(
+            Personne.getCurrentUser().name,
+            Personne.getUser(1).name
+        )]
 
         println("\n\n"+uMessages.isNullOrEmpty()+"eeeee\n")
         if(!tmpList.isNullOrEmpty()) {
@@ -35,12 +31,10 @@ class MenuCommunication : AppCompatActivity() {
         sendButton.setOnClickListener {
             if (textBox.text.isNotEmpty()) {
                 val message = Message(Personne.getCurrentUser(), textBox.text.toString())
-                val tMessageList = uMessages.get(
-                    Pair(
-                        Personne.getCurrentUser().name,
-                        Personne.getUser(1).name
-                    )
-                )
+                val tMessageList = uMessages[Pair(
+                    Personne.getCurrentUser().name,
+                    Personne.getUser(1).name
+                )]
 
                 if (tMessageList != null) {
                     print("wdwdwd")

@@ -17,10 +17,10 @@ class Personne(var name: String, var age: String) {
 
     init {
         print("E")
-        for(people in peoples) {
+        for (people in peoples) {
             val tmpList = ArrayList<Message>()
             tmpList.add(Message(getCurrentUser(), "awdad"))
-            uMessages.put(Pair(name, people.name), tmpList)
+            uMessages[Pair(name, people.name)] = tmpList
 
         }
 
@@ -28,17 +28,18 @@ class Personne(var name: String, var age: String) {
 
     companion object {
 
-        fun createTestEnvironement(){
+        fun createTestEnvironement() {
             val peep = Personne("a", "a")
             peep.notes = "asdawdasdwasdwasdwasdwas"
             savePerson(peep)
             val e = Personne("e", "e")
-            Personne.savePerson(e)
+            savePerson(e)
             //END
 
             print("awawdawawdwaaad")
             print(Personne.getUser(0).name)
         }
+
         fun savePerson(peep: Personne) {
             peoples.add(peep)
         }
@@ -51,8 +52,8 @@ class Personne(var name: String, var age: String) {
             getCurrentUser().notes = notes
         }
 
-        fun getUser(index: Int): Personne{
-            return peoples.get(index)
+        fun getUser(index: Int): Personne {
+            return peoples[index]
         }
     }
 }
