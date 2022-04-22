@@ -8,7 +8,7 @@ class Personne(var name: String, var age: String) {
     lateinit var gender: String
     lateinit var description: String
     var notes: String = ""
-    var messages = HashMap<Pair<String, String>, List<Message>>()
+
 
     /**
      * Utiliser pour sauvegarder un nouvelle utilisateur
@@ -16,15 +16,29 @@ class Personne(var name: String, var age: String) {
      */
 
     init {
-
+        print("E")
         for(people in peoples) {
-            people.messages.put(Pair(name, people.name), ArrayList())
+            val tmpList = ArrayList<Message>()
+            tmpList.add(Message(getCurrentUser(), "awdad"))
+            uMessages.put(Pair(name, people.name), tmpList)
+
         }
 
     }
 
     companion object {
 
+        fun createTestEnvironement(){
+            val peep = Personne("a", "a")
+            peep.notes = "asdawdasdwasdwasdwasdwas"
+            savePerson(peep)
+            val e = Personne("e", "e")
+            Personne.savePerson(e)
+            //END
+
+            print("awawdawawdwaaad")
+            print(Personne.getUser(0).name)
+        }
         fun savePerson(peep: Personne) {
             peoples.add(peep)
         }
