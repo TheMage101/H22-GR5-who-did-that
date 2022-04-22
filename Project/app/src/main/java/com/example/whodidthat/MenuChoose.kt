@@ -13,8 +13,12 @@ class MenuChoose : AppCompatActivity() {
 
         val addPersonButton = findViewById<Button>(R.id.ButtonAddPerson)
         addPersonButton.setOnClickListener {
-            val intent = Intent(this@MenuChoose, MenuCreationPersonne::class.java)
-            startActivity(intent)
+            val e = Personne("e", "1")
+            val a = Personne("a", "2")
+            Personne.savePerson(e)
+            println(Personne.getUser(0).name)
+            Personne.savePerson(a)
+            println(Personne.getUser(1).name)
         }
 
         val person1bouton = findViewById<Button>(R.id.person1Button)
