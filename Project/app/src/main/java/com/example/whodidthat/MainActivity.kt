@@ -12,9 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val peep = Personne("a", "a")
-        peep.notes = "asdawdasdwasdwasdwasdwas"
-        Personne.savePerson(peep)
 
         //le bouton change l'activité à MenuCommunication
         val communicationButton = findViewById<Button>(R.id.button1)
@@ -54,8 +51,12 @@ class MainActivity : AppCompatActivity() {
         //le bouton change l'activité à MenuContactUs
         val contactUsButton = findViewById<Button>(R.id.button6)
         contactUsButton.setOnClickListener {
+
             val intent = Intent(this@MainActivity, MenuContactUs::class.java)
             startActivity(intent)
         }
+    }
+    init {
+
     }
 }
