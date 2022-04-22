@@ -16,10 +16,6 @@
             android:name=".MenuContactUs"
             android:exported="false" />
         <activity
-            android:name=".activity_menu_reglages"
-            android:exported="false"
-            android:label="@string/title_activity_menu_reglages" />
-        <activity
             android:name=".MenuCommunication"
             android:exported="false" />
         <activity
