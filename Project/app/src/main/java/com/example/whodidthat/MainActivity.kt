@@ -55,8 +55,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, MenuContactUs::class.java)
             startActivity(intent)
         }
-    }
-    init {
 
+        val switchButton = findViewById<Button>(R.id.switchButton)
+        switchButton.setOnClickListener {
+
+            val intent = Intent(this@MainActivity, MenuChoose::class.java)
+            startActivity(intent)
+        }
     }
+
+
 }
