@@ -21,8 +21,8 @@ class MenuCommunication : AppCompatActivity() {
             Personne.getUser(1).name
         )]
 
-        println("\n\n"+uMessages.isNullOrEmpty()+"eeeee\n")
-        if(!tmpList.isNullOrEmpty()) {
+        println("\n\n"+uMessages.isEmpty()+"\n")
+        if(tmpList != null) {
             println("\n\ndawsdawd\n")
             messages.adapter = MessageListAdapter(tmpList)
         }
