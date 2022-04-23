@@ -17,9 +17,11 @@ class MenuCommunication : AppCompatActivity() {
         val textBox = findViewById<EditText>(R.id.editTextInput)
 
         val tmpList = uMessages[Pair(
-            Personne.getCurrentUser().name,
+            Personne.getUser(0).name,
             Personne.getUser(1).name
         )]
+
+        println(uMessages.get(Pair(Personne.getUser(0).name, Personne.getUser(1).name)))
 
         println("\n\n"+uMessages.isEmpty()+"\n")
         if(tmpList != null) {
@@ -32,7 +34,7 @@ class MenuCommunication : AppCompatActivity() {
             if (textBox.text.isNotEmpty()) {
                 val message = Message(Personne.getCurrentUser(), textBox.text.toString())
                 val tMessageList = uMessages[Pair(
-                    Personne.getCurrentUser().name,
+                    Personne.getUser(0).name,
                     Personne.getUser(1).name
                 )]
 
@@ -41,11 +43,12 @@ class MenuCommunication : AppCompatActivity() {
                     tMessageList.add(message)
                     print(tMessageList.size)
                     uMessages.put(
-                        Pair(Personne.getCurrentUser().name, Personne.getUser(1).name),
+                        Pair(Personne.getUser(0).name, Personne.getUser(1).name),
                         tMessageList
                     )
 
                     (messages.adapter as MessageListAdapter).notifyItemInserted(uMessages.size - 1)
+                    (messages.adapter as MessageListAdapter).notifyDataSetChanged()
                 }
             }
         }

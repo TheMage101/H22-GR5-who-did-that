@@ -15,17 +15,6 @@ class Personne(var name: String, var age: String) {
      * @param peep est la personne a ajouté
      */
 
-    init {
-        print("E")
-        for (people in peoples) {
-            val tmpList = ArrayList<Message>()
-            tmpList.add(Message(getCurrentUser(), "awdad"))
-            uMessages[Pair(name, people.name)] = tmpList
-
-        }
-
-    }
-
     companion object {
 
         fun createTestEnvironement() {
@@ -45,7 +34,13 @@ class Personne(var name: String, var age: String) {
         }
 
         fun getCurrentUser(): Personne {
-            return peoples[currentUser]
+            return peoples.get(currentUser)
+        }
+
+        fun e(){
+            val tmpList = ArrayList<Message>()
+            tmpList.add(Message(getCurrentUser(), "awdad"))
+            uMessages[Pair(peoples[0].name, peoples[1].name)] = tmpList
         }
 
         fun saveNotes(notes: String) {
@@ -54,6 +49,10 @@ class Personne(var name: String, var age: String) {
 
         fun getUser(index: Int): Personne {
             return peoples[index]
+        }
+
+        fun setUser(index: Int){
+            currentUser = index
         }
     }
 }
