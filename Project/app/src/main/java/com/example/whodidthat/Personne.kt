@@ -7,6 +7,7 @@ class Personne(var name: String, var age: String) {
 
     lateinit var gender: String
     lateinit var description: String
+    val indexId = 0
     var notes: String = ""
 
 
@@ -31,16 +32,14 @@ class Personne(var name: String, var age: String) {
 
         fun savePerson(peep: Personne) {
             peoples.add(peep)
+
+            for (people in peoples) {
+                uMessages[Pair(getCurrentUser(), people)] = ArrayList<Message>()
+            }
         }
 
         fun getCurrentUser(): Personne {
             return peoples.get(currentUser)
-        }
-
-        fun e(){
-            val tmpList = ArrayList<Message>()
-            tmpList.add(Message(getCurrentUser(), "awdad"))
-            uMessages[Pair(peoples[0].name, peoples[1].name)] = tmpList
         }
 
         fun saveNotes(notes: String) {
@@ -51,7 +50,7 @@ class Personne(var name: String, var age: String) {
             return peoples[index]
         }
 
-        fun setUser(index: Int){
+        fun setUser(index: Int) {
             currentUser = index
         }
     }

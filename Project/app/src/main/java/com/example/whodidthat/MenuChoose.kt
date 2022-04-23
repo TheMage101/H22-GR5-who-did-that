@@ -17,7 +17,6 @@ class MenuChoose : AppCompatActivity() {
             val a = Personne("a", "2")
             Personne.savePerson(e)
             Personne.savePerson(a)
-            Personne.e()
             println(Personne.getUser(0).name)
             println(Personne.getUser(1).name)
         }
