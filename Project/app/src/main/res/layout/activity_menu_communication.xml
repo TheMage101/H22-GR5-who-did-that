@@ -32,6 +32,8 @@
                 android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
 
 
+
+
             <!--bouton ici, bouton pour accéder au profil de la personne
             il y en aura un deuxième dans l'autre coin pour accéder aux menu 6 boutons. Je n'ai pas encore trouvé comment faire
             les deux vont dans le même coin et je peux rien déplacer-->

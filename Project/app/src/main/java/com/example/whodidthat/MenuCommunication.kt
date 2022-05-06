@@ -1,14 +1,19 @@
 package com.example.whodidthat
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import kotlin.random.Random
 
 class MenuCommunication : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_communication)
@@ -32,7 +37,13 @@ class MenuCommunication : AppCompatActivity() {
 
         sendButton.setOnClickListener {
             if (textBox.text.isNotEmpty()) {
-                val message = Message(Personne.getCurrentUser(), textBox.text.toString())
+                val dateAndTime = LocalDateTime.now()
+                val formatterTime = DateTimeFormatter.ofPattern("HH.mm")
+                val formatterDate = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+                val time = dateAndTime.format(formatterTime)
+                val date = dateAndTime.format(formatterDate)
+                val message = Message(Personne.getCurrentUser(), textBox.text.toString(),
+                time, date)
                 val tMessageList = uMessages[Pair(
                     Personne.getUser(0),
                     Personne.getUser(1)
@@ -52,25 +63,5 @@ class MenuCommunication : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    fun generateList(size: Int): ArrayList<Message> {
-        val list = ArrayList<Message>()
-        val r = Random
-
-        for (i in 0..size) {
-            when (r.nextInt(2)) {
-                0 -> {
-                    val message = Message(Personne.getCurrentUser(), "a")
-                    list.add(message)
-                }
-                1 -> {
-                    val message = Message(Personne.getUser(1), "e")
-                    list.add(message)
-                }
-            }
-        }
-
-        return list
     }
 }
