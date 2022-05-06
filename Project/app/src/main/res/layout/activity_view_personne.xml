@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F3FBFF"
     android:backgroundTint="#F3FBFF"
-    tools:context=".MenuCreationPersonne">
+    tools:context=".MenuViewPersonne">
 
     <Button
         android:id="@+id/button_add_pfp"
@@ -15,57 +15,52 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="72dp"
         android:background="@drawable/add_profile_picture_icon"
-        android:foreground="@drawable/add_profile_picture_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/editTextPersonName"
+    <TextView
+        android:id="@+id/textPersonName"
         android:layout_width="232dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="@string/name_input_hint"
-        android:inputType="textPersonName"
+        android:text="@string/person_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/button_add_pfp"
         app:layout_constraintTop_toTopOf="@+id/button_add_pfp" />
 
-    <EditText
-        android:id="@+id/editTextPersonAge"
+    <TextView
+        android:id="@+id/textPersonAge"
         android:layout_width="232dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="@string/age_input_hint"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        android:text="@string/person_age"
+        app:layout_constraintEnd_toEndOf="@+id/textPersonName"
         app:layout_constraintStart_toEndOf="@+id/button_add_pfp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/textPersonName" />
 
-    <EditText
-        android:id="@+id/editTextPersonPronounsa"
+    <TextView
+        android:id="@+id/textPersonPronouns"
         android:layout_width="232dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="@string/pronouns_input_hint"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        android:text="@string/person_Pronouns"
+        app:layout_constraintEnd_toEndOf="@+id/textPersonName"
         app:layout_constraintStart_toEndOf="@+id/button_add_pfp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
+        app:layout_constraintTop_toBottomOf="@+id/textPersonAge" />
 
-    <EditText
-        android:id="@+id/editTextPersonOccupation"
+    <TextView
+        android:id="@+id/textPersonOccupation"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginEnd="3dp"
         android:ems="10"
-        android:hint="@string/occupation_input_hint"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        android:text="@string/person_Occupation"
+        app:layout_constraintEnd_toEndOf="@+id/textPersonName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button_add_pfp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonPronounsa" />
+        app:layout_constraintTop_toBottomOf="@+id/textPersonPronouns" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -73,23 +68,20 @@
         android:layout_height="375dp"
         android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textPersonName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button_add_pfp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonOccupation"
+        app:layout_constraintTop_toBottomOf="@+id/textPersonOccupation"
         app:layout_constraintVertical_bias="0.0">
 
-        <EditText
-            android:id="@+id/editTextTextMultiLine2"
+        <TextView
+            android:id="@+id/textMoreInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
-            android:hint="@string/more_info_input_hint"
-            android:inputType="textMultiLine"
-            android:minHeight="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:text="@string/person_more_info"
+            android:minHeight="50dp" />
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
