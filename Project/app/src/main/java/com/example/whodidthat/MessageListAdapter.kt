@@ -20,6 +20,10 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
         mMessageList = messageList
     }
 
+    /**
+     * Initialise l'adapteur et verifie si un message est un message reçu ou un message
+     * envoyé
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == VIEW_TYPE_MESSAGE_SENT) {
             val itemView = LayoutInflater.from(parent.context).inflate(
@@ -38,6 +42,9 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
         }
     }
 
+    /**
+     * Récupere le type du message et va leur call leur methode .bind() respective
+     */
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val message = mMessageList.get(position)
 
@@ -53,10 +60,19 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
         }
     }
 
+    /**
+     * récupere le nombre de message qu'il y a
+     */
     override fun getItemCount(): Int {
         return mMessageList.size
     }
 
+    /**
+     * Recupere le type de message qui est vu
+     * VIEW_TYPE_MESSAGE_SENT     si c'est un message que l'utilisateur a envoyé
+     * VIEW_TYPE_MESSAGE_RECEIVED si c'est un message que l'utilisateur a reçu
+     * VIEW_TYPE_EMPTY            si il n'y a aucun message
+     */
     override fun getItemViewType(position: Int): Int {
         val message = mMessageList.get(position)
 
@@ -70,6 +86,9 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
     }
 
 
+    /**
+     * Va mettre les valeurs dans le message afficher pour un message reçu
+     */
     class ReceivedMessageHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val messageText = itemView.findViewById<TextView>(R.id.text_message_other)
 
@@ -87,7 +106,9 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
         }
     }
 
-
+    /**
+     * Va mettre les valeurs dans le message afficher pour un message envoyer
+     */
     class SentMessageHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val messageText = itemView.findViewById<TextView>(R.id.text_message_me)

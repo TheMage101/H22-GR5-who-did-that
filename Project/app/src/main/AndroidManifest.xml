@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhoDidThat">
         <activity
+            android:name=".MenuCommunicationSelect"
+            android:exported="false" />
+        <activity
             android:name=".MenuVote"
             android:exported="false" />
         <activity
