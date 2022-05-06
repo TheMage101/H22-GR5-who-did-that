@@ -5,7 +5,7 @@ var currentUser: Int = 0
 
 class Personne(var name: String, var age: String) {
 
-    lateinit var gender: String
+    lateinit var pronouns: String
     lateinit var description: String
     val indexId = 0
     var notes: String = ""
@@ -20,7 +20,6 @@ class Personne(var name: String, var age: String) {
 
         fun createTestEnvironement() {
             val peep = Personne("a", "a")
-            peep.notes = "asdawdasdwasdwasdwasdwas"
             savePerson(peep)
             val e = Personne("e", "e")
             savePerson(e)

@@ -15,6 +15,14 @@
     <string name="voting_button">Voting</string>
     <string name="help_button">Help</string>
 
+    <string name="name_input_hint">Name</string>
+    <string name="age_input_hint">Age</string>
+    <string name="pronouns_input_hint">Pronouns</string>
+    <string name="occupation_input_hint">Occupation</string>
+    <string name="more_info_input_hint">Additionnal information</string>
+
+
+
 
     <string name="notes_title">AAAAAA</string>
     <string name="notes_text_hint">AAAAAA</string>
