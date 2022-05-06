@@ -29,9 +29,6 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
             return SentMessageHolder(itemView)
         }
 
-        //add to it if some error
-        // if(viewType == VIEW_TYPE_MESSAGE_RECEIVED)
-        //saved line of code temporarily
         else {
             val itemView = LayoutInflater.from(parent.context).inflate(
                 R.layout.activity_other_person_message,
@@ -63,8 +60,8 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
     override fun getItemViewType(position: Int): Int {
         val message = mMessageList.get(position)
 
-        if (mMessageList.size <= 1){
-            if (message.sender.equals(Personne.getCurrentUser()))
+        if (mMessageList.size >= 1){
+            if (message.sender.toString() == Personne.getCurrentUser().toString())
                 return VIEW_TYPE_MESSAGE_SENT
             else
                 return VIEW_TYPE_MESSAGE_RECEIVED

@@ -16,19 +16,21 @@ class MenuChoose : AppCompatActivity() {
             val e = Personne("e", "1")
             val a = Personne("a", "2")
             Personne.savePerson(e)
-            println(Personne.getUser(0).name)
             Personne.savePerson(a)
+            println(Personne.getUser(0).name)
             println(Personne.getUser(1).name)
         }
 
         val person1bouton = findViewById<Button>(R.id.person1Button)
         person1bouton.setOnClickListener {
+            Personne.setUser(0)
             val intent = Intent(this@MenuChoose, MainActivity::class.java)
             startActivity(intent)
         }
 
         val person2bouton = findViewById<Button>(R.id.person2Button)
         person2bouton.setOnClickListener {
+            Personne.setUser(1)
             val intent = Intent(this@MenuChoose, MainActivity::class.java)
             startActivity(intent)
         }

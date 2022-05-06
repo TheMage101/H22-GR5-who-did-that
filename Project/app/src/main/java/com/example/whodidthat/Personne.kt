@@ -7,6 +7,7 @@ class Personne(var name: String, var age: String) {
 
     lateinit var gender: String
     lateinit var description: String
+    val indexId = 0
     var notes: String = ""
 
 
@@ -14,18 +15,6 @@ class Personne(var name: String, var age: String) {
      * Utiliser pour sauvegarder un nouvelle utilisateur
      * @param peep est la personne a ajouté
      */
-
-    init {
-
-        for (people in peoples) {
-            val tmpList = ArrayList<Message>()
-            tmpList.add(Message(getCurrentUser(), "awdad"))
-            uMessages[Pair(name, people.name)] = tmpList
-
-        }
-        print("E")
-        
-    }
 
     companion object {
 
@@ -43,10 +32,14 @@ class Personne(var name: String, var age: String) {
 
         fun savePerson(peep: Personne) {
             peoples.add(peep)
+
+            for (people in peoples) {
+                uMessages[Pair(getCurrentUser(), people)] = ArrayList<Message>()
+            }
         }
 
         fun getCurrentUser(): Personne {
-            return peoples[currentUser]
+            return peoples.get(currentUser)
         }
 
         fun saveNotes(notes: String) {
@@ -55,6 +48,10 @@ class Personne(var name: String, var age: String) {
 
         fun getUser(index: Int): Personne {
             return peoples[index]
+        }
+
+        fun setUser(index: Int) {
+            currentUser = index
         }
     }
 }
