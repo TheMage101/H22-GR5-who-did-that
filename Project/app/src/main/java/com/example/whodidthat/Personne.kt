@@ -52,5 +52,9 @@ class Personne(var name: String, var age: String) {
         fun setUser(index: Int) {
             currentUser = index
         }
+
+        fun getUserList(): ArrayList<Personne>{
+            return peoples
+        }
     }
 }
