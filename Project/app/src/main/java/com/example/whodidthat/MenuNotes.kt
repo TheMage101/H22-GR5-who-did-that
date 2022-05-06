@@ -13,6 +13,7 @@ class MenuNotes : AppCompatActivity() {
 
         var personne = Personne.getCurrentUser()
 
+        //recupere les notes de l'utilisateur si il en a
         if (personne.notes.isNotEmpty()) {
             notesText.setText(personne.notes)
         }
@@ -20,7 +21,9 @@ class MenuNotes : AppCompatActivity() {
     }
 
 
-
+    /**
+     * sauvegarde les notes de l'utilisateur avant de retourner au menu principal
+     */
     override fun onBackPressed() {
         Personne.saveNotes(findViewById<EditText>(R.id.notesText).text.toString())
         finish()
