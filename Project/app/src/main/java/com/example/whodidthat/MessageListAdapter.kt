@@ -73,12 +73,17 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
     class ReceivedMessageHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val messageText = itemView.findViewById<TextView>(R.id.text_message_other)
 
-
         val nameText = itemView.findViewById<TextView>(R.id.text_name_other)
+
+        val timeText = itemView.findViewById<TextView>(R.id.text_message_hour_other)
+        val dateText = itemView.findViewById<TextView>(R.id.text_message_date_other)
 
         fun bind(message: Message) {
             nameText.setText(message.sender.name)
             messageText.setText(message.message)
+            timeText.setText(message.time)
+            dateText.setText(message.date)
+
         }
     }
 
@@ -86,9 +91,13 @@ class MessageListAdapter(messageList: ArrayList<Message>) :
     class SentMessageHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val messageText = itemView.findViewById<TextView>(R.id.text_message_me)
+        val dateText = itemView.findViewById<TextView>(R.id.text_message_date_me)
+        val timeText = itemView.findViewById<TextView>(R.id.text_message_hour_me)
 
         fun bind(message: Message) {
             messageText.setText(message.message)
+            dateText.setText(message.date)
+            timeText.setText(message.time)
         }
     }
 

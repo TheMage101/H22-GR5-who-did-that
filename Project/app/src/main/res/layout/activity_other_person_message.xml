@@ -45,6 +45,8 @@
     </androidx.cardview.widget.CardView>
 
     <!--Information: le jour de l'envoi du message de l'autre personne-->
+
+    <!--Information: l'heure d'envoi du message de l'autre personne-->
     <TextView
         android:id="@+id/text_message_date_other"
         android:layout_width="wrap_content"
@@ -52,11 +54,11 @@
         android:text="date sent"
         android:textColor="#818181"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView_profile_other"
         app:layout_constraintEnd_toEndOf="@+id/cardView_message_other"
-        app:layout_constraintStart_toStartOf="@+id/cardView_message_other" />
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toEndOf="@+id/text_name_other"
+        tools:layout_editor_absoluteY="0dp" />
 
-    <!--Information: l'heure d'envoi du message de l'autre personne-->
     <TextView
         android:id="@+id/text_message_hour_other"
         android:layout_width="wrap_content"
@@ -70,24 +72,15 @@
 
     <!--photo de profil de l'autre personne
     possiblement, on pourrait pouvoir l'appuyer pour montrer le profil de l'autre?-->
-    <ImageView
-        android:id="@+id/imageView_profile_other"
-        android:layout_width="65dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView_message_other"
-        app:layout_constraintStart_toStartOf="@+id/cardView_message_other"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <!--nom de l'autre personne-->
     <TextView
         android:id="@+id/text_name_other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
         android:text="TextView"
         android:textColor="#818181"
         app:layout_constraintBottom_toTopOf="@+id/cardView_message_other"
-        app:layout_constraintStart_toEndOf="@+id/imageView_profile_other" />
+        tools:layout_editor_absoluteX="8dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

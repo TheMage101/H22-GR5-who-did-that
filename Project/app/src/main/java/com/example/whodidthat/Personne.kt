@@ -20,7 +20,6 @@ class Personne(var name: String, var age: String) {
 
         fun createTestEnvironement() {
             val peep = Personne("a", "a")
-            peep.notes = "asdawdasdwasdwasdwasdwas"
             savePerson(peep)
             val e = Personne("e", "e")
             savePerson(e)
