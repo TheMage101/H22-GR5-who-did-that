@@ -16,14 +16,15 @@ class Personne(var name: String, var age: String) {
      */
 
     init {
-        print("E")
+
         for (people in peoples) {
             val tmpList = ArrayList<Message>()
             tmpList.add(Message(getCurrentUser(), "awdad"))
             uMessages[Pair(name, people.name)] = tmpList
 
         }
-
+        print("E")
+        
     }
 
     companion object {
