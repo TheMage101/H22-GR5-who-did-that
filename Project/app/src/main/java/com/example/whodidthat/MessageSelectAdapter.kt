@@ -1,6 +1,5 @@
 package com.example.whodidthat
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +14,7 @@ class MessageSelectAdapter(listePersonne:ArrayList<Personne>, private val onItem
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.activity_emnu_communication_select_user_layout,
+            R.layout.activity_menu_communication_select_user_layout,
             parent, false
         )
         return userHolder(itemView, onItemClick)
