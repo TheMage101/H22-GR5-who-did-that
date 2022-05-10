@@ -10,6 +10,14 @@ class MenuViewPersonne : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_personne)
 
+        var user = Personne.getCurrentUser();
+
+        var textOfVewPersonne = findViewById<TextView>(R.id.textPersonName)
+        textOfVewPersonne.setText("indnind")
+
+        var textFromCreation = findViewById<EditText>(R.id.editTextPersonName)
+
+
 
 
     }
