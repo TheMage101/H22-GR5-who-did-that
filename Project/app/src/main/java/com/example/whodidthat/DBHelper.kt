@@ -1,9 +1,11 @@
 package com.example.whodidthat
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 
 class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
@@ -39,9 +41,41 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         db.close()
     }
 
-    fun getUser(): Cursor? {
+
+    @SuppressLint("Range")
+    fun getUsers(): List<Personne> {
+        val userList: ArrayList<Personne> = ArrayList<Personne>()
+        val selectQuery = "SELECT * FROM $TABLE_NAME"
         val db = this.readableDatabase
-        return db.rawQuery("SELECT * FROM " + TABLE_NAME, null)
+        var cursor:Cursor? = null
+        try{
+            cursor = db.rawQuery(selectQuery, null)
+        } catch(e: SQLiteException){
+            db.execSQL(selectQuery)
+            return ArrayList()
+        }
+
+        var userName: String
+        var userAge: String
+        var userDescription: String
+        var userNotes: String
+
+        if(cursor.moveToFirst()){
+            do{
+                userName = cursor.getString(cursor.getColumnIndex("name"))
+                userAge = cursor.getString(cursor.getColumnIndex("age"))
+                userDescription = cursor.getString(cursor.getColumnIndex("descritpion"))
+                userNotes = cursor.getString(cursor.getColumnIndex("notes"))
+
+                val user = Personne(userName, userAge, "e", "e")
+                user.description = userDescription
+                user.notes = userNotes
+
+                userList.add(user)
+
+            }while(cursor.moveToNext())
+        }
+        return userList
     }
 
     companion object {
