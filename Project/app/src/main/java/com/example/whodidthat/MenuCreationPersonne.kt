@@ -37,7 +37,7 @@ class MenuCreationPersonne : AppCompatActivity() {
             } else {
                 val newPerson = Personne(nameText, ageText, pronounText, titleText)
                 Personne.savePerson(newPerson)
-                println(nameText + "--"+ nameText +"--"+ pronounText +"--"+ titleText)
+                println(newPerson.name + "--"+ newPerson.age +"--"+ newPerson.pronouns +"--"+ newPerson.Occupation)
 
             }
         }
