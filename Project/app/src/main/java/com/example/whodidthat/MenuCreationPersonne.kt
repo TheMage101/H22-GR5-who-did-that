@@ -41,7 +41,9 @@ class MenuCreationPersonne : AppCompatActivity() {
                 errorTitle.show()
             } else {
                 val newPerson = Personne(nameText.toString(), ageText.toString(), pronounText.toString(), titleText.toString())
-                Personne.savePerson(newPerson)
+                Personne.saveUser(newPerson)
+                println(newPerson.name + "--"+ newPerson.age +"--"+ newPerson.pronouns +"--"+ newPerson.Occupation)
+
             }
         }
     }

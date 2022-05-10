@@ -60,6 +60,7 @@ class MenuCommunication : AppCompatActivity() {
                     else
                         (messages.adapter as MessageListAdapter).notifyItemInserted(uMessages.size - 1)
                     (messages.adapter as MessageListAdapter).notifyDataSetChanged()
+                    textBox.text.clear()
                 }
             }
         }

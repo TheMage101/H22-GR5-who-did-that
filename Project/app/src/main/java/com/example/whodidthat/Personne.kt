@@ -20,17 +20,17 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
     companion object {
 
         fun createTestEnvironement() {
-            val peep = Personne("a", "a", "f", "f")
-            savePerson(peep)
+            val user = Personne("a", "a", "f", "f")
+            saveUser(user)
             val e = Personne("e", "e", "f", "f")
-            savePerson(e)
+            saveUser(e)
             //END
 
             print("awawdawawdwaaad")
             print(Personne.getUser(0).name)
         }
 
-        fun savePerson(user: Personne) {
+        fun saveUser(user: Personne) {
             userList.add(user)
             val emptyArray = ArrayList<Message>()
             emptyArray.add(Message(getCurrentUser(), "aw", "1", "1321"))
