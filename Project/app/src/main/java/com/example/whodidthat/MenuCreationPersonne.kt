@@ -11,10 +11,10 @@ class MenuCreationPersonne : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_creation_personne)
 
-        val nameText = findViewById<EditText>(R.id.editTextPersonName).text.toString()
-        val ageText = findViewById<EditText>(R.id.editTextPersonAge).text.toString()
-        val pronounText = findViewById<EditText>(R.id.editTextPersonPronounsa).text.toString()
-        val titleText = findViewById<EditText>(R.id.editTextPersonOccupation).text.toString()
+        val nameText = findViewById<EditText>(R.id.editTextPersonName).toString()
+        val ageText = findViewById<EditText>(R.id.editTextPersonAge).toString()
+        val pronounText = findViewById<EditText>(R.id.editTextPersonPronounsa).toString()
+        val titleText = findViewById<EditText>(R.id.editTextPersonOccupation).toString()
 
         val saveButton = findViewById<Button>(R.id.savePersonButton)
 
@@ -23,17 +23,22 @@ class MenuCreationPersonne : AppCompatActivity() {
                 var errorName = Snackbar.make(it, "Name can't be empty! Please enter a name.", Snackbar.LENGTH_LONG)
                 errorName.show()
             }
-            if (ageText.isEmpty() || ageText.isBlank()) {
+            else if (ageText.isEmpty() || ageText.isBlank()) {
                 var errorAge = Snackbar.make(it, "Age can't be empty! Please enter an age.", Snackbar.LENGTH_LONG)
                 errorAge.show()
             }
-            if (pronounText.isEmpty() || pronounText.isBlank()) {
+            else if (pronounText.isEmpty() || pronounText.isBlank()) {
                 var errorPronoun = Snackbar.make(it, "Pronouns can't be empty! Please enter pronouns.", Snackbar.LENGTH_LONG)
                 errorPronoun.show()
             }
-            if (titleText.isEmpty() || titleText.isBlank()) {
+            else if (titleText.isEmpty() || titleText.isBlank()) {
                 var errorTitle = Snackbar.make(it, "Occupation can't be empty! Please enter an occupation.", Snackbar.LENGTH_LONG)
                 errorTitle.show()
+            } else {
+                val newPerson = Personne(nameText, ageText, pronounText, titleText)
+                Personne.savePerson(newPerson)
+                println(nameText + "--"+ nameText +"--"+ pronounText +"--"+ titleText)
+
             }
         }
 
@@ -41,8 +46,8 @@ class MenuCreationPersonne : AppCompatActivity() {
 
         //get la description EditText
 
-        val personne = Personne(nameText, ageText, pronounText, titleText)
-        val peopleList = Personne.savePerson(personne)
+
+
 
     }
 }
