@@ -69,8 +69,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="366dp"
-        android:layout_height="290dp"
+        android:layout_width="0dp"
+        android:layout_height="219dp"
         android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
@@ -96,7 +96,7 @@
         android:id="@+id/savePersonButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
