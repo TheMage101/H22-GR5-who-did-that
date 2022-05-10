@@ -34,5 +34,11 @@ class MenuChoose : AppCompatActivity() {
             val intent = Intent(this@MenuChoose, MainActivity::class.java)
             startActivity(intent)
         }
+
+        val createPerson = findViewById<Button>(R.id.buttonCreate)
+        createPerson.setOnClickListener {
+            val intent = Intent(this@MenuChoose, MenuCreationPersonne::class.java)
+            startActivity(intent)
+        }
     }
 }
