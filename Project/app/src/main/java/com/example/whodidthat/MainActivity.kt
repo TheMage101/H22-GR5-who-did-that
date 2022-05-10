@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         //le bouton change l'activité à MenuCommunication
         val communicationButton = findViewById<Button>(R.id.button1)
         communicationButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, MenuCommunication::class.java)
+            val intent = Intent(this@MainActivity, MenuCommunicationSelect::class.java)
             startActivity(intent)
         }
 

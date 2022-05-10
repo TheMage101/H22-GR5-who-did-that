@@ -22,13 +22,13 @@ class MenuCommunication : AppCompatActivity() {
         val textBox = findViewById<EditText>(R.id.editTextInput)
 
         val tmpList = uMessages[Pair(
-            Personne.getUser(0),
-            Personne.getUser(1)
+            Personne.getCurrentUser(),
+            Personne.getCurrentUser().userCommunicatingTo
         )]
 
 
+        println(tmpList.isNullOrEmpty())
         if(tmpList != null) {
-            println("\n\ndawsdawd\n")
             messages.adapter = MessageListAdapter(tmpList)
         }
         messages.layoutManager = LinearLayoutManager(this)
@@ -43,8 +43,8 @@ class MenuCommunication : AppCompatActivity() {
                 val message = Message(Personne.getCurrentUser(), textBox.text.toString(),
                 time, date)
                 val tMessageList = uMessages[Pair(
-                    Personne.getUser(0),
-                    Personne.getUser(1)
+                    Personne.getCurrentUser(),
+                    Personne.getCurrentUser().userCommunicatingTo
                 )]
 
                 if (tMessageList != null) {
@@ -55,8 +55,10 @@ class MenuCommunication : AppCompatActivity() {
                         Pair(Personne.getUser(0), Personne.getUser(1)),
                         tMessageList
                     )
-
-                    (messages.adapter as MessageListAdapter).notifyItemInserted(uMessages.size - 1)
+                    if(tMessageList.isEmpty())
+                        (messages.adapter as MessageListAdapter).notifyItemInserted(0)
+                    else
+                        (messages.adapter as MessageListAdapter).notifyItemInserted(uMessages.size - 1)
                     (messages.adapter as MessageListAdapter).notifyDataSetChanged()
                 }
             }

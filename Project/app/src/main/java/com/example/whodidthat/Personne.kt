@@ -9,6 +9,7 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
     lateinit var description: String
     val indexId = 0
     var notes: String = ""
+    lateinit var userCommunicatingTo: Personne
 
 
     /**
@@ -31,6 +32,8 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
 
         fun savePerson(peep: Personne) {
             peoples.add(peep)
+            val emptyArray = ArrayList<Message>()
+            emptyArray.add(Message(getCurrentUser(), "aw", "1", "1321"))
 
             for (people in peoples) {
                 uMessages[Pair(getCurrentUser(), people)] = ArrayList<Message>()

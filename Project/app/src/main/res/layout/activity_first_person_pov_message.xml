@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
 
-    <!--ça c'est la shape du message, ce qui est en bleu essentiellement-->
+    <!--ça c'est la forme du message, ce qui est en bleu essentiellement-->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_message_me"
         android:layout_width="wrap_content"
