@@ -12,7 +12,6 @@ class MenuCreationPersonne : AppCompatActivity() {
         setContentView(R.layout.activity_menu_creation_personne)
 
         val nameTextInput = findViewById<EditText>(R.id.editTextPersonName)
-
         val ageTextInput = findViewById<EditText>(R.id.editTextPersonAge)
         val pronounTextInput = findViewById<EditText>(R.id.editTextPersonPronounsa)
         val titleTextInput = findViewById<EditText>(R.id.editTextPersonOccupation)
@@ -43,17 +42,7 @@ class MenuCreationPersonne : AppCompatActivity() {
             } else {
                 val newPerson = Personne(nameText.toString(), ageText.toString(), pronounText.toString(), titleText.toString())
                 Personne.savePerson(newPerson)
-                println(newPerson.name + "--"+ newPerson.age +"--"+ newPerson.pronouns +"--"+ newPerson.Occupation)
-
             }
         }
-
-
-
-        //get la description EditText
-
-
-
-
     }
 }
