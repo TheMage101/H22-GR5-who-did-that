@@ -15,8 +15,8 @@ class MenuChoose : AppCompatActivity() {
         addPersonButton.setOnClickListener {
             val e = Personne("e", "1", "a", "yes")
             val a = Personne("a", "2", "e", "no")
-            Personne.savePerson(e)
-            Personne.savePerson(a)
+            Personne.saveUser(e)
+            Personne.saveUser(a)
             println(Personne.getUser(0).name)
             println(Personne.getUser(1).name)
         }
