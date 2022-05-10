@@ -30,5 +30,10 @@ class MenuViewPersonne : AppCompatActivity() {
             val intent = Intent(this@MenuViewPersonne, MenuCreationPersonne::class.java)
             startActivity(intent)
         }
+        val finishedButton = findViewById<Button>(R.id.finishButton)
+        finishedButton.setOnClickListener {
+            val intent = Intent(this@MenuViewPersonne, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

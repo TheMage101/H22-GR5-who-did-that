@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var user = Personne.getCurrentUser();
+
+        var textOfWelcome: TextView = findViewById(R.id.viewNameCurrentUser)
+        textOfWelcome.text = (user.name)
 
         //le bouton change l'activité à MenuCommunication
         val communicationButton = findViewById<Button>(R.id.button1)
