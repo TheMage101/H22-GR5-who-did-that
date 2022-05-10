@@ -11,14 +11,20 @@ class MenuCreationPersonne : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_creation_personne)
 
-        val nameText = findViewById<EditText>(R.id.editTextPersonName).toString()
-        val ageText = findViewById<EditText>(R.id.editTextPersonAge).toString()
-        val pronounText = findViewById<EditText>(R.id.editTextPersonPronounsa).toString()
-        val titleText = findViewById<EditText>(R.id.editTextPersonOccupation).toString()
+        val nameTextInput = findViewById<EditText>(R.id.editTextPersonName)
+
+        val ageTextInput = findViewById<EditText>(R.id.editTextPersonAge)
+        val pronounTextInput = findViewById<EditText>(R.id.editTextPersonPronounsa)
+        val titleTextInput = findViewById<EditText>(R.id.editTextPersonOccupation)
 
         val saveButton = findViewById<Button>(R.id.savePersonButton)
 
         saveButton.setOnClickListener{
+            val nameText = nameTextInput.text
+            val ageText = ageTextInput.text
+            val pronounText = pronounTextInput.text
+            val titleText = titleTextInput.text
+
             if (nameText.isEmpty() || nameText.isBlank()) {
                 var errorName = Snackbar.make(it, "Name can't be empty! Please enter a name.", Snackbar.LENGTH_LONG)
                 errorName.show()
@@ -35,7 +41,7 @@ class MenuCreationPersonne : AppCompatActivity() {
                 var errorTitle = Snackbar.make(it, "Occupation can't be empty! Please enter an occupation.", Snackbar.LENGTH_LONG)
                 errorTitle.show()
             } else {
-                val newPerson = Personne(nameText, ageText, pronounText, titleText)
+                val newPerson = Personne(nameText.toString(), ageText.toString(), pronounText.toString(), titleText.toString())
                 Personne.savePerson(newPerson)
                 println(newPerson.name + "--"+ newPerson.age +"--"+ newPerson.pronouns +"--"+ newPerson.Occupation)
 
