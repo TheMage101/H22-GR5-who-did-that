@@ -1,6 +1,6 @@
 package com.example.whodidthat
 
-val peoples = ArrayList<Personne>()
+val userList = ArrayList<Personne>()
 var currentUser: Int = 0
 
 class Personne(var name: String, var age: String, var pronouns: String, var Occupation: String) {
@@ -30,18 +30,18 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
             print(Personne.getUser(0).name)
         }
 
-        fun savePerson(peep: Personne) {
-            peoples.add(peep)
+        fun savePerson(user: Personne) {
+            userList.add(user)
             val emptyArray = ArrayList<Message>()
             emptyArray.add(Message(getCurrentUser(), "aw", "1", "1321"))
 
-            for (people in peoples) {
+            for (people in userList) {
                 uMessages[Pair(getCurrentUser(), people)] = ArrayList<Message>()
             }
         }
 
         fun getCurrentUser(): Personne {
-            return peoples.get(currentUser)
+            return userList.get(currentUser)
         }
 
         fun saveNotes(notes: String) {
@@ -49,7 +49,7 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
         }
 
         fun getUser(index: Int): Personne {
-            return peoples[index]
+            return userList[index]
         }
 
         fun setUser(index: Int) {
@@ -57,7 +57,8 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
         }
 
         fun getUserList(): ArrayList<Personne>{
-            return peoples
+            return userList
         }
+
     }
 }
