@@ -1,5 +1,6 @@
 package com.example.whodidthat
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -15,6 +16,7 @@ class MenuCreationPersonne : AppCompatActivity() {
         val ageTextInput = findViewById<EditText>(R.id.editTextPersonAge)
         val pronounTextInput = findViewById<EditText>(R.id.editTextPersonPronounsa)
         val titleTextInput = findViewById<EditText>(R.id.editTextPersonOccupation)
+        val descriptionTextInput = findViewById<EditText>(R.id.editTextTextMultiLine2)
 
         val saveButton = findViewById<Button>(R.id.savePersonButton)
 
@@ -23,6 +25,7 @@ class MenuCreationPersonne : AppCompatActivity() {
             val ageText = ageTextInput.text
             val pronounText = pronounTextInput.text
             val titleText = titleTextInput.text
+            val descriptionText = descriptionTextInput.text
 
             if (nameText.isEmpty() || nameText.isBlank()) {
                 var errorName = Snackbar.make(it, "Name can't be empty! Please enter a name.", Snackbar.LENGTH_LONG)
@@ -41,9 +44,10 @@ class MenuCreationPersonne : AppCompatActivity() {
                 errorTitle.show()
             } else {
                 val newPerson = Personne(nameText.toString(), ageText.toString(), pronounText.toString(), titleText.toString())
+                newPerson.description = descriptionText.toString()
                 Personne.saveUser(newPerson)
-                println(newPerson.name + "--"+ newPerson.age +"--"+ newPerson.pronouns +"--"+ newPerson.Occupation)
-
+                val intent = Intent(this@MenuCreationPersonne, MenuViewPersonne::class.java)
+                startActivity(intent)
             }
         }
     }

@@ -34,13 +34,16 @@
             android:name=".MenuCreationPersonne"
             android:exported="false" />
         <activity
-            android:name=".MenuChoose"
+            android:name=".MenuViewPersonne"
             android:exported="false" />
         <activity
             android:name=".MenuNotes"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".MenuChoose"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,6 +51,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
