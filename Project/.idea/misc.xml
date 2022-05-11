@@ -37,6 +37,8 @@
         <entry key="app/src/main/res/layout/activity_menu_creation_personne.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_menu_person_choosing.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_other_person_message.xml" value="0.8702444767606432" />
+        <entry key="app/src/main/res/layout/activity_person_button.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_view_personne.xml" value="0.19610507246376813" />
       </map>
     </option>
   </component>
