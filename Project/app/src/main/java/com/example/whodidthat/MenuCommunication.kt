@@ -22,6 +22,24 @@ class MenuCommunication : AppCompatActivity() {
         val sendButton = findViewById<Button>(R.id.button_send)
         val textBox = findViewById<EditText>(R.id.editTextInput)
 
+        val goBackButton = findViewById<Button>(R.id.goingBackToList)
+        goBackButton.setOnClickListener {
+            val intent = Intent(this@MenuCommunication, MenuCommunicationSelect::class.java)
+            startActivity(intent)
+        }
+
+        val switchButton = findViewById<Button>(R.id.messagesSwitchButton)
+        switchButton.setOnClickListener {
+            val intent = Intent(this@MenuCommunication, MenuChoose::class.java)
+            startActivity(intent)
+        }
+
+        val profileButton = findViewById<Button>(R.id.messagesProfileButton)
+        profileButton.setOnClickListener {
+            val intent = Intent(this@MenuCommunication, MenuViewPersonne::class.java)
+            startActivity(intent)
+        }
+
         val tmpList = uMessages[Pair(
             Personne.getCurrentUser(),
             Personne.getCurrentUser().userCommunicatingTo
@@ -62,24 +80,6 @@ class MenuCommunication : AppCompatActivity() {
                     (messages.adapter as MessageListAdapter).notifyDataSetChanged()
                     textBox.text.clear()
                 }
-            }
-
-            val goBackButton = findViewById<Button>(R.id.goingBackToList)
-            goBackButton.setOnClickListener {
-                val intent = Intent(this@MenuCommunication, MenuCommunicationSelect::class.java)
-                startActivity(intent)
-            }
-
-            val switchButton = findViewById<Button>(R.id.messagesSwitchButton)
-            switchButton.setOnClickListener {
-                val intent = Intent(this@MenuCommunication, MenuChoose::class.java)
-                startActivity(intent)
-            }
-
-            val profileButton = findViewById<Button>(R.id.messagesProfileButton)
-            profileButton.setOnClickListener {
-                val intent = Intent(this@MenuCommunication, MenuViewPersonne::class.java)
-                startActivity(intent)
             }
         }
     }
