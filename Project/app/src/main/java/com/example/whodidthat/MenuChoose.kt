@@ -21,19 +21,6 @@ class MenuChoose : AppCompatActivity() {
             println(Personne.getUser(1).name)
         }
 
-        val person1bouton = findViewById<Button>(R.id.person1Button)
-        person1bouton.setOnClickListener {
-            Personne.setUser(0)
-            val intent = Intent(this@MenuChoose, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        val person2bouton = findViewById<Button>(R.id.person2Button)
-        person2bouton.setOnClickListener {
-            Personne.setUser(1)
-            val intent = Intent(this@MenuChoose, MainActivity::class.java)
-            startActivity(intent)
-        }
 
         val createPerson = findViewById<Button>(R.id.buttonCreate)
         createPerson.setOnClickListener {

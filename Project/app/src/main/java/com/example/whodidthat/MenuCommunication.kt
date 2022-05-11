@@ -1,5 +1,6 @@
 package com.example.whodidthat
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,7 +26,6 @@ class MenuCommunication : AppCompatActivity() {
             Personne.getCurrentUser(),
             Personne.getCurrentUser().userCommunicatingTo
         )]
-
 
         println(tmpList.isNullOrEmpty())
         if(tmpList != null) {
@@ -62,6 +62,24 @@ class MenuCommunication : AppCompatActivity() {
                     (messages.adapter as MessageListAdapter).notifyDataSetChanged()
                     textBox.text.clear()
                 }
+            }
+
+            val goBackButton = findViewById<Button>(R.id.goingBackToList)
+            goBackButton.setOnClickListener {
+                val intent = Intent(this@MenuCommunication, MenuCommunicationSelect::class.java)
+                startActivity(intent)
+            }
+
+            val switchButton = findViewById<Button>(R.id.messagesSwitchButton)
+            switchButton.setOnClickListener {
+                val intent = Intent(this@MenuCommunication, MenuChoose::class.java)
+                startActivity(intent)
+            }
+
+            val profileButton = findViewById<Button>(R.id.messagesProfileButton)
+            profileButton.setOnClickListener {
+                val intent = Intent(this@MenuCommunication, MenuViewPersonne::class.java)
+                startActivity(intent)
             }
         }
     }

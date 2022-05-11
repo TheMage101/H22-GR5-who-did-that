@@ -31,17 +31,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+                <Button
+                    android:id="@+id/goingBackToList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/messagesSwitchButton"
+                    android:layout_width="135dp"
+                    android:layout_height="51dp"
+                    android:text="Switch"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/messagesProfileButton"
+                    app:layout_constraintStart_toEndOf="@+id/goingBackToList"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/messagesProfileButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <!--bouton ici, bouton pour accéder au profil de la personne
             il y en aura un deuxième dans l'autre coin pour accéder aux menu 6 boutons. Je n'ai pas encore trouvé comment faire
             les deux vont dans le même coin et je peux rien déplacer-->
-            <Button
-                android:id="@+id/button15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>

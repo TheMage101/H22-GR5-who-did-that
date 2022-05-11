@@ -118,8 +118,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="24dp"
         android:text="Hello,"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button1" />
@@ -132,6 +132,15 @@
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/viewProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:text="View Profile"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintStart_toStartOf="@+id/button1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
