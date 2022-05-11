@@ -70,7 +70,8 @@ class MenuCommunication : AppCompatActivity() {
                     tMessageList.add(message)
                     print(tMessageList.size)
                     uMessages.put(
-                        Pair(Personne.getUser(0), Personne.getUser(1)),
+                        Pair(Personne.getCurrentUser(),
+                             Personne.getCurrentUser().userCommunicatingTo),
                         tMessageList
                     )
                     if(tMessageList.isEmpty())
