@@ -7,7 +7,7 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
 
 
     lateinit var description: String
-    val indexId = 0
+    var indexId = 0
     var notes: String = ""
     lateinit var userCommunicatingTo: Personne
 
@@ -20,23 +20,21 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
     companion object {
 
         fun createTestEnvironement() {
-            val user = Personne("a", "a", "f", "f")
-            saveUser(user)
+            val a = Personne("a", "a", "f", "f")
+            saveUser(a)
             val e = Personne("e", "e", "f", "f")
             saveUser(e)
             //END
-
-            print("awawdawawdwaaad")
-            print(Personne.getUser(0).name)
         }
 
         fun saveUser(user: Personne) {
             userList.add(user)
+            setUser(userList.size - 1)
+            user.indexId = userList.size
             val emptyArray = ArrayList<Message>()
-            emptyArray.add(Message(getCurrentUser(), "aw", "1", "1321"))
 
-            for (people in userList) {
-                uMessages[Pair(getCurrentUser(), people)] = ArrayList<Message>()
+            for (aUser in userList) {
+                uMessages[Pair(getCurrentUser(), aUser)] = emptyArray
             }
         }
 
@@ -56,7 +54,7 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
             currentUser = index
         }
 
-        fun getUserList(): ArrayList<Personne>{
+        fun getUserList(): ArrayList<Personne> {
             return userList
         }
 

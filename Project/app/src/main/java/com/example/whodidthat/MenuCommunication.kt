@@ -60,6 +60,7 @@ class MenuCommunication : AppCompatActivity() {
                 val date = dateAndTime.format(formatterDate)
                 val message = Message(Personne.getCurrentUser(), textBox.text.toString(),
                 time, date)
+
                 val tMessageList = uMessages[Pair(
                     Personne.getCurrentUser(),
                     Personne.getCurrentUser().userCommunicatingTo
