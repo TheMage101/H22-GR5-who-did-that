@@ -45,14 +45,22 @@ class MenuCommunication : AppCompatActivity() {
             Personne.getCurrentUser().userCommunicatingTo
         )]
 
-        println(tmpList.isNullOrEmpty())
+        println("is null or empty : "+tmpList.isNullOrEmpty())
+
         if(tmpList != null) {
             messages.adapter = MessageListAdapter(tmpList)
+            println("List not null")
+        }else {
+            println("List null")
+            println("current user: " +Personne.getCurrentUser().name)
+            println("user messaging to: " +Personne.getCurrentUser().userCommunicatingTo.name)
         }
+
         messages.layoutManager = LinearLayoutManager(this)
 
         sendButton.setOnClickListener {
             if (textBox.text.isNotEmpty()) {
+                println("textbox not empty? " +textBox.text.isNotEmpty())
                 val dateAndTime = LocalDateTime.now()
                 val formatterTime = DateTimeFormatter.ofPattern("HH.mm")
                 val formatterDate = DateTimeFormatter.ofPattern("yyyy-MM-dd")
@@ -68,7 +76,7 @@ class MenuCommunication : AppCompatActivity() {
                 if (tMessageList != null) {
                     print("wdwdwd")
                     tMessageList.add(message)
-                    print(tMessageList.size)
+                    print("list size: "+tMessageList.size)
                     uMessages.put(
                         Pair(Personne.getCurrentUser(),
                              Personne.getCurrentUser().userCommunicatingTo),

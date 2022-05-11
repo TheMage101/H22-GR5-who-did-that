@@ -12,7 +12,7 @@ class MenuViewPersonne : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_personne)
 
-        var user = Personne.getCurrentUser();
+        var user = Personne.getCurrentUser()
 
         var textOfName: TextView = findViewById(R.id.textPersonName)
         textOfName.text = (user.name)
