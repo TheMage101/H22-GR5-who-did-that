@@ -14,7 +14,7 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
 
     /**
      * Utiliser pour sauvegarder un nouvelle utilisateur
-     * @param peep est la personne a ajouté
+     * @param user est la personne a ajouté
      */
 
     companion object {
@@ -34,7 +34,13 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
             val emptyArray = ArrayList<Message>()
 
             for (aUser in userList) {
-                uMessages[Pair(getCurrentUser(), aUser)] = emptyArray
+                uMessages.put(Pair(getCurrentUser(), aUser),ArrayList<Message>())
+                print(uMessages.get(Pair(getCurrentUser(), aUser)).toString())
+                /*
+                user1  ->  user2
+                user2  -/> u    ser1
+
+                 */
             }
         }
 

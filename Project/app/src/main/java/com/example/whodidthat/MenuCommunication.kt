@@ -40,56 +40,69 @@ class MenuCommunication : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val tmpList = uMessages[Pair(
+        var pair: Pair<Personne, Personne>
+
+
+        var tmpList = uMessages[Pair(
             Personne.getCurrentUser(),
             Personne.getCurrentUser().userCommunicatingTo
         )]
 
-        println("is null or empty : "+tmpList.isNullOrEmpty())
+        if (tmpList == null) {
+            pair =
+                Pair(
+                    Personne.getCurrentUser().userCommunicatingTo,
+                    Personne.getCurrentUser()
+                )
+        } else {
+            pair =
+                Pair(
+                    Personne.getCurrentUser(),
+                    Personne.getCurrentUser().userCommunicatingTo
+                )
+        }
 
-        if(tmpList != null) {
+        tmpList = uMessages.get(pair)
+
+
+        if (tmpList != null) {
             messages.adapter = MessageListAdapter(tmpList)
             println("List not null")
-        }else {
+        } else {
             println("List null")
-            println("current user: " +Personne.getCurrentUser().name)
-            println("user messaging to: " +Personne.getCurrentUser().userCommunicatingTo.name)
+            println("current user: " + Personne.getCurrentUser().name)
+            println("user messaging to: " + Personne.getCurrentUser().userCommunicatingTo.name)
         }
 
         messages.layoutManager = LinearLayoutManager(this)
 
         sendButton.setOnClickListener {
             if (textBox.text.isNotEmpty()) {
-                println("textbox not empty? " +textBox.text.isNotEmpty())
+                println("textbox not empty? " + textBox.text.isNotEmpty())
                 val dateAndTime = LocalDateTime.now()
                 val formatterTime = DateTimeFormatter.ofPattern("HH.mm")
                 val formatterDate = DateTimeFormatter.ofPattern("yyyy-MM-dd")
                 val time = dateAndTime.format(formatterTime)
                 val date = dateAndTime.format(formatterDate)
-                val message = Message(Personne.getCurrentUser(), textBox.text.toString(),
-                time, date)
+                val message = Message(
+                    Personne.getCurrentUser(), textBox.text.toString(),
+                    time, date
+                )
 
-                val tMessageList = uMessages[Pair(
-                    Personne.getCurrentUser(),
-                    Personne.getCurrentUser().userCommunicatingTo
-                )]
 
-                if (tMessageList != null) {
-                    print("wdwdwd")
-                    tMessageList.add(message)
-                    print("list size: "+tMessageList.size)
-                    uMessages.put(
-                        Pair(Personne.getCurrentUser(),
-                             Personne.getCurrentUser().userCommunicatingTo),
-                        tMessageList
-                    )
-                    if(tMessageList.isEmpty())
+                if (tmpList != null) {
+                    tmpList.add(message)
+                    uMessages.put(pair, tmpList)
+                }
+
+                if (tmpList != null) {
+                    if (tmpList.isEmpty())
                         (messages.adapter as MessageListAdapter).notifyItemInserted(0)
                     else
                         (messages.adapter as MessageListAdapter).notifyItemInserted(uMessages.size - 1)
-                    (messages.adapter as MessageListAdapter).notifyDataSetChanged()
-                    textBox.text.clear()
                 }
+                (messages.adapter as MessageListAdapter).notifyDataSetChanged()
+                textBox.text.clear()
             }
         }
     }
