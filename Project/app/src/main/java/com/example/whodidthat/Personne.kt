@@ -12,21 +12,14 @@ class Personne(var name: String, var age: String, var pronouns: String, var Occu
     lateinit var userCommunicatingTo: Personne
 
 
+
+    companion object {
+        
+
     /**
      * Utiliser pour sauvegarder un nouvelle utilisateur
      * @param user est la personne a ajouté
      */
-
-    companion object {
-
-        fun createTestEnvironement() {
-            val a = Personne("a", "a", "f", "f")
-            saveUser(a)
-            val e = Personne("e", "e", "f", "f")
-            saveUser(e)
-            //END
-        }
-
         fun saveUser(user: Personne) {
             userList.add(user)
             setUser(userList.size - 1)

@@ -22,18 +22,27 @@ class MenuCommunication : AppCompatActivity() {
         val sendButton = findViewById<Button>(R.id.button_send)
         val textBox = findViewById<EditText>(R.id.editTextInput)
 
+        /**
+         * Ramenene l'utilisateur au meu principal
+         */
         val goBackButton = findViewById<Button>(R.id.goingBackToList)
         goBackButton.setOnClickListener {
             val intent = Intent(this@MenuCommunication, MenuCommunicationSelect::class.java)
             startActivity(intent)
         }
 
+        /**
+         * se bouton permet de switch l'utilisateur qui est présentement utilisé
+         */
         val switchButton = findViewById<Button>(R.id.messagesSwitchButton)
         switchButton.setOnClickListener {
             val intent = Intent(this@MenuCommunication, MenuChoose::class.java)
             startActivity(intent)
         }
 
+        /**
+         * Ce bouton permer d'amener l'utilisateur à la visualisation de son profil
+         */
         val profileButton = findViewById<Button>(R.id.messagesProfileButton)
         profileButton.setOnClickListener {
             val intent = Intent(this@MenuCommunication, MenuViewPersonne::class.java)
@@ -43,11 +52,14 @@ class MenuCommunication : AppCompatActivity() {
         var pair: Pair<Personne, Personne>
 
 
+        //cette liste récupere les messages de 2 users
         var tmpList = uMessages[Pair(
             Personne.getCurrentUser(),
             Personne.getCurrentUser().userCommunicatingTo
         )]
 
+        // si tmpList est null cela veut dire que les valeurs des clés
+        // sont inversés
         if (tmpList == null) {
             pair =
                 Pair(
@@ -65,20 +77,14 @@ class MenuCommunication : AppCompatActivity() {
         tmpList = uMessages.get(pair)
 
 
-        if (tmpList != null) {
+        if (tmpList != null)
             messages.adapter = MessageListAdapter(tmpList)
-            println("List not null")
-        } else {
-            println("List null")
-            println("current user: " + Personne.getCurrentUser().name)
-            println("user messaging to: " + Personne.getCurrentUser().userCommunicatingTo.name)
-        }
 
         messages.layoutManager = LinearLayoutManager(this)
 
+         //envoie le message si le case texte n'est pas vide
         sendButton.setOnClickListener {
             if (textBox.text.isNotEmpty()) {
-                println("textbox not empty? " + textBox.text.isNotEmpty())
                 val dateAndTime = LocalDateTime.now()
                 val formatterTime = DateTimeFormatter.ofPattern("HH.mm")
                 val formatterDate = DateTimeFormatter.ofPattern("yyyy-MM-dd")

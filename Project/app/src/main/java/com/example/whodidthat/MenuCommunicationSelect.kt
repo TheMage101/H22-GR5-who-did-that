@@ -13,7 +13,6 @@ class MenuCommunicationSelect : AppCompatActivity() {
         setContentView(R.layout.activity_menu_communication_select)
 
         val recyclerView = findViewById<RecyclerView>(R.id.contactList)
-        //val errorText = findViewById<TextView>(R.id.noOneMessage)
 
 
         val mAdapter = MessageSelectAdapter(Personne.getUserList()) { position -> onItemClick(position) }
@@ -25,6 +24,9 @@ class MenuCommunicationSelect : AppCompatActivity() {
 
     }
 
+    /**
+     * Est la methode qui va definir ce qu'il va se passer lorsu'on click sur l'un des items
+     */
     private fun onItemClick(position: Int){
         val selectedUser = Personne.getUserList()[position]
         Personne.getCurrentUser().userCommunicatingTo = selectedUser

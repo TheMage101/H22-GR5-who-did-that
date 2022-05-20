@@ -25,11 +25,14 @@ class MenuViewPersonne : AppCompatActivity() {
         var textOfMoreInfo: TextView = findViewById(R.id.textMoreInfo)
         textOfMoreInfo.text = (user.description)
 
+        //ce bouton amene au menu pour modifier les informations de l'user
         val modifyButton = findViewById<Button>(R.id.modifyPersonButton)
         modifyButton.setOnClickListener {
             val intent = Intent(this@MenuViewPersonne, MenuCreationPersonne::class.java)
             startActivity(intent)
         }
+
+        //complete la creation de l'user
         val finishedButton = findViewById<Button>(R.id.finishButton)
         finishedButton.setOnClickListener {
             val intent = Intent(this@MenuViewPersonne, MainActivity::class.java)

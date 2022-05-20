@@ -14,6 +14,9 @@ class MenuChoose : AppCompatActivity() {
         setContentView(R.layout.activity_menu_person_choosing)
 
 
+        /**
+         * ce bouton permet de créer 2 utilisateur pour les tests
+         */
         val addPersonButton = findViewById<Button>(R.id.ButtonAddPerson)
         addPersonButton.setOnClickListener {
             val e = Personne("e", "1", "a", "yes")
@@ -25,6 +28,10 @@ class MenuChoose : AppCompatActivity() {
         }
 
 
+        /**
+         * Ce bouton amène l'utilisateur sur l'activité
+         * CreationPersonne
+         */
         val createPerson = findViewById<Button>(R.id.buttonCreate)
         createPerson.setOnClickListener {
             val intent = Intent(this@MenuChoose, MenuCreationPersonne::class.java)
@@ -38,6 +45,10 @@ class MenuChoose : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
+    /**
+     * c'est la methode qui indique ce qui va se passer lorsqu'on click un utilisateur
+     * dans le recyclingView
+     */
     fun onItemClick(position: Int){
         Personne.setUser(position)
 

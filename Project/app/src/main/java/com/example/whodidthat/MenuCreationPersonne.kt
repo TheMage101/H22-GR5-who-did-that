@@ -27,6 +27,7 @@ class MenuCreationPersonne : AppCompatActivity() {
             val titleText = titleTextInput.text
             val descriptionText = descriptionTextInput.text
 
+            //les ifs et else ifs vont afficher des messages d'erreurs dépendant de l'erreur
             if (nameText.isEmpty() || nameText.isBlank()) {
                 var errorName = Snackbar.make(it, "Name can't be empty! Please enter a name.", Snackbar.LENGTH_LONG)
                 errorName.show()
